@@ -1,10 +1,19 @@
 class News extends React.Component {
 	render() {
+		let data = this.props.data;
+		let newsTemplate = data.map((item, index) => {
+			return (
+				<div key={item.id}>
+					<p className="news_author">{item.author}:</p>
+					<p className="news_text">{item.text}:</p>					
+				</div>
+			);		
+		});
+		console.log(newsTemplate);
 		return (
-			<div className="news">
-				Unfortunately no news required.
-			</div>
-		);		
+			<div className="news">{newsTemplate}</div>
+		);
+		
 	}
 };
 

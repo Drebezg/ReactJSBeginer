@@ -1,19 +1,8 @@
-/*var	my_news	=	[		
-{				
-	author:	'Саша	Печкин',				
-	text:	'В	четверг,	четвертого	числа...'		
-},		
-{				
-	author:	'Просто	Вася',				
-	text:	'Считаю,	что	$	должен	стоить	35	рублей!'		
-},		
-{				
-	author:	'Гость',				
-	text:	'Бесплатно.	Скачать.	Лучший	сайт	-	http://localhost:3000'		
-} 
-];
+import App from './components/App';
 
 
+
+/*
 var News = React.createClass({
 	render: function(){
 		var data = this.props.data;
@@ -66,4 +55,3 @@ ReactDOM.render(
 	<App />,
 	document.getElementById('root')
 	);*/
-import App from './components/App';
