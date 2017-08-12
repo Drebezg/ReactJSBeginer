@@ -66,5 +66,7 @@ ReactDOM.render(
 	<App />,
 	document.getElementById('root')
 	);*/
-console.log(React);
-console.log(ReactDOM);
+ReactDOM.render(
+	<h1>Hello</h1>,
+	document.getElementById('root')
+);
