@@ -1,4 +1,5 @@
 import Article from './Article';
+import PropTypes from 'prop-types';
 
 class News extends React.Component {
 	render() {
@@ -25,5 +26,9 @@ class News extends React.Component {
 		);		
 	}
 };
-
+//------<Add beter error message
+News.propTypes = {
+	data: PropTypes.any.isRequired
+};
+//-------->
 export default News;

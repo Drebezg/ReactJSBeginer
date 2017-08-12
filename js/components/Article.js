@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 class Article extends React.Component {
 	render() {
 		let author = this.props.data.author,
@@ -11,5 +13,12 @@ class Article extends React.Component {
 		);
 	}
 }
-
+//---<Catch error if no data 
+Article.propTypes = {
+	data: PropTypes.shape({
+		author: PropTypes.string.isRequired,
+		text: PropTypes.string.isRequired
+	})
+}
+//--------->
 export default Article;
