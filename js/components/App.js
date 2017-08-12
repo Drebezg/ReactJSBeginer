@@ -1,5 +1,4 @@
 import News from './News';
-import Comments from './Comments';
 
 const my_news = [		
 {
@@ -23,9 +22,8 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="app">
-				Component App! I can show news.
+				<h3>News</h3>
 				<News data={my_news}/>
-				<Comments />
 			</div>
 		);
 	}
