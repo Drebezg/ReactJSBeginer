@@ -9,11 +9,13 @@ class News extends React.Component {
 				</div>
 			);		
 		});
-		console.log(newsTemplate);
-		return (
-			<div className="news">{newsTemplate}</div>
-		);
 		
+		return (
+			<div className="news">
+				{newsTemplate}
+				<strong className={data.length > 0 ? '' : 'none'}>Всего новостей:{data.length}</strong>
+			</div>
+		);		
 	}
 };
 
