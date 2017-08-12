@@ -1,0 +1,29 @@
+{
+  "name": "react-ru-tutorial",
+  "version": "1.0.0",
+  "description": "React RU tutorial",
+  "main": "server.js",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "express": "^4.15.4",
+    "nodemon": "^1.11.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "webpack": "webpack -wd",
+    "nodemon": "nodemon --exec babel-node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drebezg/ReactJSBeginer.git"
+  },
+  "author": "Drebezg",
+  "license": "MIT"
+}
