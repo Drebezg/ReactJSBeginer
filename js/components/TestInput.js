@@ -1,16 +1,14 @@
 class TestInput extends React.Component {
 	constructor(props) {
 		super(props);
-		//this.state = {myValue: ''};
-		//this.onChangeHandler = this.onChangeHandler.bind(this);
 		this.onBtnClickHandler = this.onBtnClickHandler.bind(this);
 	}
-	/*onChangeHandler = (e) => {
-		this.setState({myValue: e.target.value});
-	};*/
+	componentDidMount() {
+		ReactDOM.findDOMNode(this.refs.myTestInput).focus();
+	}
 	onBtnClickHandler = () => {
-		alert(ReactDOM.findDOMNode(this.refs.myTestInput).value);
 		console.log(this.refs);
+		alert(ReactDOM.findDOMNode(this.refs.myTestInput).value);
 	}
 	render() {
 		return (
