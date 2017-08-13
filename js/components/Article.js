@@ -16,6 +16,7 @@ class Article extends React.Component {
 			text = this.props.data.text,
 			bigText = this.props.data.bigText,
 			visible = this.state.visible;
+		console.log('render', this);	
 		return(
 			<div className="article">
 				<p className="news_author">{author}</p>
