@@ -4,17 +4,20 @@ const my_news = [
 {
 	id: 0,				
 	author:	'Саша Печкин',				
-	text:	'В	четверг,	четвертого	числа...'		
+	text:	'В	четверг,	четвертого	числа...',
+	bigText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'		
 },		
 {
 	id: 1,				
 	author:	'Просто	Вася',				
-	text:	'Считаю, что	$ должен стоить 35 рублей!'		
+	text:	'Считаю, что	$ должен стоить 35 рублей!',
+	bigText: 'Vel qui laboriosam ipsa labore deleniti quasi amet alias tenetur, nostrum fugiat doloremque repellendus sed nihil rem reiciendis?'		
 },		
 {
 	id: 2,				
 	author:	'Гость',				
-	text:	'Бесплатно.	Скачать. Лучший	сайт - http://localhost:3000'		
+	text:	'Бесплатно.	Скачать. Лучший	сайт - http://localhost:3000',
+	bigText: 'Adipisci suscipit culpa neque necessitatibus aliquam, accusamus, dicta iure nobis laudantium eum, numquam minus fuga, saepe dolore sit laborum blanditiis assumenda modi!'		
 } 
 ];
 
