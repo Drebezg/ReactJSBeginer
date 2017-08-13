@@ -5,12 +5,8 @@ class News extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {counter: 0};
-		this.onTotalNewsClick = this.onTotalNewsClick.bind(this);
 	}
-	onTotalNewsClick = (e) => {
-		e.preventDefault();
-		this.setState({counter: ++this.state.counter});
-	};
+	
 	render() {
 		let data = this.props.data;
 		let newsTemplate;
@@ -31,8 +27,7 @@ class News extends React.Component {
 			<div className="news">
 				{newsTemplate}
 				<strong 
-					className={'news_count ' + (data.length > 0 ? '' : 'none') }
-					onClick={this.onTotalNewsClick}>
+					className={'news_count ' + (data.length > 0 ? '' : 'none') }>
 					Total news:{data.length}
 				</strong>
 			</div>

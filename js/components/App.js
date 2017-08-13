@@ -1,4 +1,5 @@
 import News from './News';
+import TestInput from './TestInput';
 
 const my_news = [		
 {
@@ -26,6 +27,7 @@ class App extends React.Component {
 		return (
 			<div className="app">
 				<h3>News</h3>
+				<TestInput />
 				<News data={my_news}/>
 			</div>
 		);
