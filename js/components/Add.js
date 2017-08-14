@@ -1,7 +1,11 @@
 class Add extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {btnIsDisabled: true};
+		this.state = {
+			agreeNotChecked: true,
+			authorIsEmpty: true,
+			textIsEmpty: true
+		};
 		this.onBtnClickHandler = this.onBtnClickHandler.bind(this);
 	}
 	componentDidMount() {
@@ -15,9 +19,26 @@ class Add extends React.Component {
 
 	}
 	onCheckRuleClick = (e) => {
-		this.setState({btnIsDisabled: !this.state.btnIsDisabled});
+		this.setState({agreeNotChecked: !this.state.agreeNotChecked});
+	}
+	onAuthorChange = (e) => {
+		if(e.target.value.trim().length > 0) {
+			this.setState({authorIsEmpty: false});
+		} else {
+			this.setState({authorIsEmpty: true});
+		}
+	}
+	onTextChange = (e) => {
+		if(e.target.value.trim().length > 0) {
+			this.setState({textIsEmpty: false});
+		} else {
+			this.setState({textIsEmpty: true});
+		}
 	}
 	render() {
+		let agreeNotChecked = this.state.agreeNotChecked,
+			authorIsEmpty = this.state.authorIsEmpty,
+			textIsEmpty = this.state.textIsEmpty;
 		return (
 			<form className="add cf">
 				<input
@@ -26,12 +47,14 @@ class Add extends React.Component {
 					defaultValue=''
 					placeholder="Your name:" 
 					ref='author'
+					onChange={this.onAuthorChange}
 				/>
 				<textarea
 					className="add_text"
 					defaultValue=""
 					placeholder="News text"
 					ref="text"
+					onChange={this.onTextChange}
 				></textarea>
 				<label className="add_checkrule">
 					<input 
@@ -46,7 +69,7 @@ class Add extends React.Component {
 					className="add_btn"
 					onClick={this.onBtnClickHandler} 
 					ref="alert_button"
-					disabled={this.state.btnIsDisabled}>
+					disabled={agreeNotChecked || authorIsEmpty || textIsEmpty}>
 					ShowAlert
 				</button>
 			</form>	
