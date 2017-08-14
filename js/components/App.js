@@ -1,5 +1,5 @@
 import News from './News';
-import TestInput from './TestInput';
+import Add from './Add';
 
 const my_news = [		
 {
@@ -26,8 +26,8 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="app">
+				<Add />
 				<h3>News</h3>
-				<TestInput />
 				<News data={my_news}/>
 			</div>
 		);
