@@ -1,6 +1,8 @@
 import News from './News';
 import Add from './Add';
+import PropTypes from 'prop-types';
 
+window.ee = new EventEmitter();
 const my_news = [		
 {
 	id: 0,				
@@ -23,16 +25,34 @@ const my_news = [
 ];
 
 class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			news: my_news		
+		};
+	}
+	componentDidMount() {
+		let self = this;
+		window.ee.addListener('News.add', (item) => {
+			let nextNews = item.concat(self.state.news);
+			self.setState({news: nextNews});
+		});
+	}
+	componentWillUnmount() {
+		window.ee.removeListener('News.add');
+	}
 	render() {
+		console.log('render');
 		return (
 			<div className="app">
 				<Add />
 				<h3>News</h3>
-				<News data={my_news}/>
+				<News data={this.state.news}/>
 			</div>
 		);
 	}
 };
+
 
 ReactDOM.render(
 	<App />,

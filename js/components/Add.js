@@ -13,10 +13,19 @@ class Add extends React.Component {
 	}
 	onBtnClickHandler = (e) => {
 		e.preventDefault();
+		let textEl = ReactDOM.findDOMNode(this.refs.text);
 		let author = ReactDOM.findDOMNode(this.refs.author).value,
-			text = ReactDOM.findDOMNode(this.refs.text).value;
-		alert(`${author} \n ${text}`);
-
+			text = textEl.value;
+		let id = Math.random();	
+		let item = [{
+			id: id,
+			author: author,
+			text: text,
+			bigText: '...'
+		}];
+		window.ee.emit('News.add', item);
+		textEl.value = '';
+		this.setState({textIsEmpty: true});
 	}
 	onCheckRuleClick = (e) => {
 		this.setState({agreeNotChecked: !this.state.agreeNotChecked});
@@ -70,7 +79,7 @@ class Add extends React.Component {
 					onClick={this.onBtnClickHandler} 
 					ref="alert_button"
 					disabled={agreeNotChecked || authorIsEmpty || textIsEmpty}>
-					ShowAlert
+					Add news
 				</button>
 			</form>	
 		);
